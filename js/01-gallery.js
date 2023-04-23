@@ -32,10 +32,10 @@ galleryList.addEventListener("click", (event) => {
 
 // Close instance on Esc key press
 const onEscPress = (event, item) => {
-  const KEY = "Escape";
-  if (event.code === KEY) {
+  const ESC_KEYCODE = "Escape";
+  if (event.code === ESC_KEYCODE) {
     item.close();
-    array.splice(array.indexOf(item), 1); // Remove instance from array
+   array.splice(array.indexOf(item), 1); // Remove instance from array
     document.removeEventListener("keydown", (event) =>
       onEscPress(event, item)
     );
