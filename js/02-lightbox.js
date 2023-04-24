@@ -3,6 +3,8 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryList = document.querySelector(".gallery");
 
+const items = [];
+
 galleryItems.forEach(({ preview, original, description }) => {
     const galleryItem = document.createElement("li");
     galleryItem.classList.add("gallery__item");
@@ -18,8 +20,10 @@ image.alt = description;
 
 link.append(image);
 galleryItem.append(link);
-galleryList.append(galleryItem);
+items.push(galleryItem);
 });
+
+galleryList.append(...items);
 
 const lightbox = new SimpleLightbox(".gallery a", {
     captionsData:"alt",
